@@ -1,4 +1,4 @@
-import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,7 +6,29 @@ import { toast } from 'react-toastify';
 const JobPage = ({ deleteJob }) => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const job = useLoaderData();
+  const [job, setJob] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchJob = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`https://jobs-server-api-ashy.vercel.app/api/jobs/${id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch job');
+        }
+        const data = await response.json();
+        setJob(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchJob();
+  }, [id]);
 
   const onDeleteClick = (jobId) => {
     const confirm = window.confirm(
@@ -111,10 +133,4 @@ const JobPage = ({ deleteJob }) => {
   );
 };
 
-const jobLoader = async ({ params }) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
-  const data = await res.json();
-  return data;
-};
-
-export { JobPage as default, jobLoader };
+export default JobPage;
