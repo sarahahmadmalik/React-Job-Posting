@@ -5,11 +5,12 @@ import Navbar from '../components/Navbar';
 
 const MainLayout = () => {
   return (
-    <>
+    <div className='bg-img '>
+      
       <Navbar />
       <Outlet />
       <ToastContainer />
-    </>
+    </div>
   );
 };
 export default MainLayout;

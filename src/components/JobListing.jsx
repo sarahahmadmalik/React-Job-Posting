@@ -12,7 +12,7 @@ const JobListing = ({ job }) => {
   }
 
   return (
-    <div className='bg-white rounded-xl shadow-md relative'>
+    <div className='bg-white index rounded-xl shadow-md relative transition duration-300 transform hover:scale-105 cursor-pointer'>
       <div className='p-4'>
         <div className='mb-6'>
           <div className='text-gray-600 my-2'>{job.type}</div>
@@ -39,7 +39,7 @@ const JobListing = ({ job }) => {
           </div>
           <Link
             to={`/jobs/${job.id}`}
-            className='h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm'
+            className='h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm transition duration-300'
           >
             Read More
           </Link>
@@ -48,4 +48,5 @@ const JobListing = ({ job }) => {
     </div>
   );
 };
+
 export default JobListing;

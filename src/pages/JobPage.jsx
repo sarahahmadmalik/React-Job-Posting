@@ -25,7 +25,7 @@ const JobPage = ({ deleteJob }) => {
   return (
     <>
       <section>
-        <div className='container m-auto py-6 px-6'>
+        <div className='container m-auto py-6 px-6 index'>
           <Link
             to='/jobs'
             className='text-indigo-500 hover:text-indigo-600 flex items-center'
