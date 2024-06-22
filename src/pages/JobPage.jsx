@@ -14,7 +14,7 @@ useEffect(() => {
     const fetchJob = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/jobs/${id}`);
+        const response = await fetch(`https://jobs-server-api-ashy.vercel.app/api/jobs/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch job');
         }
