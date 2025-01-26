@@ -29,7 +29,7 @@ const JobPage = () => {
     fetchJobData();
   }, [id]);
 
-  if (loading) return <Spinner loading={loading}/>
+  if (loading) return <Spinner loading={loading} />;
   if (error) return <p className="error-message-job">{error}</p>;
 
   if (!job) {
@@ -40,10 +40,7 @@ const JobPage = () => {
     <div className="job-details-wrapper">
       <section>
         <div className="job-container">
-          <Link
-            to="/jobs"
-            className="backbtn-link"
-          >
+          <Link to="/jobs" className="backbtn-link">
             <FaArrowLeft className="backbtn-link-icon" /> Back to Job Listings
           </Link>
         </div>
@@ -82,14 +79,10 @@ const JobPage = () => {
                 <hr className="my-4" />
 
                 <h3 className="text-xl">Contact Email:</h3>
-                <p className="contact-info">
-                  {job?.company?.contactEmail}
-                </p>
+                <p className="contact-info">{job?.company?.contactEmail}</p>
 
                 <h3 className="text-xl">Contact Phone:</h3>
-                <p className="contact-info">
-                  {job?.company?.contactPhone}
-                </p>
+                <p className="contact-info">{job?.company?.contactPhone}</p>
               </div>
             </aside>
           </div>

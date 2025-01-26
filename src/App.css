@@ -247,7 +247,7 @@
 .about-us-section {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     height: 100%;
     background-color: #eff6ff; 
     padding: 1.5rem;
@@ -255,7 +255,6 @@
 
 .about-us-container {
     width: 100%;
-    padding: 2rem;
     margin: 0 0 4rem 0;
 }
 
