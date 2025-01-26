@@ -1,0 +1,18 @@
+.view-all-jobs {
+    max-width: 32rem;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  .view-all-jobs-link {
+    display: block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+  }
+  
+  .view-all-jobs-link:hover {
+    background-color: #374151;
+  }

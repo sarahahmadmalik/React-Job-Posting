@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 .bg-img {
+  position: relative;
   background-image: url("./assets/images/img.jpg");
   background-size: cover;
   background-position: bottom;
-  background-attachment:fixed;
+  background-attachment: fixed;
 }
+
 
 body,
 html {

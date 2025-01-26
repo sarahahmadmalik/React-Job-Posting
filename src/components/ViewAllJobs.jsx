@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
+import './styles/ViewAllJobs.css';
 
 const ViewAllJobs = () => {
   return (
-    <section className='m-auto index max-w-lg my-10 px-6'>
-      <Link
-        to='/jobs'
-        className='block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700'
-      >
+    <section className="view-all-jobs">
+      <Link to='/jobs' className="view-all-jobs-link">
         View All Jobs
       </Link>
     </section>
   );
 };
+
 export default ViewAllJobs;

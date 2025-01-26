@@ -2,9 +2,9 @@ import Hero from "../components/Hero";
 import HomeCards from "../components/HomeCards";
 import JobListings from "../components/JobListings";
 
-const HomePage = () => {
+const Home = () => {
   return (
-    <div className="relative">
+    <div className="home-container">
       <div className="bg-img ">
         <Hero />
         <HomeCards />
@@ -13,4 +13,4 @@ const HomePage = () => {
     </div>
   );
 };
-export default HomePage;
+export default Home;

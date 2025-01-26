@@ -1,0 +1,10 @@
+.card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+  
+  .card-gray-100 { background-color: #f3f4f6; }
+  .card-gray-200 { background-color: #e5e7eb;  }
+  

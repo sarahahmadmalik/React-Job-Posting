@@ -1,0 +1,43 @@
+.job-listings {
+    background-color: #eff6ff;
+    min-height: 100vh;
+    padding: 2.5rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .job-listings-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1024px) {
+    .job-listings-container {
+      width: 100%;
+    }
+  }
+  
+  .job-listings-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #6366f1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .job-listings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    .job-listings-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 800px) and (max-width: 1200px) {
+    .job-listings-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

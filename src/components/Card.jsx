@@ -1,8 +1,8 @@
-const Card = ({ children, bg = 'bg-gray-100' }) => {
-  const hoverBgColor = `hover:${bg.replace('bg-', 'darken-')}-1`;
+import './styles/Card.css';
 
+const Card = ({ children, bg = 'gray-100' }) => {
   return (
-    <div className={`${bg} index p-6 rounded-lg shadow-md transition duration-300 ${hoverBgColor} hover:shadow-lg`}>
+    <div className={`card card-${bg}`}>
       {children}
     </div>
   );
