@@ -1,24 +1,25 @@
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import './styles/Header.css';
 
 const Header = ({ isMobile, toggleSidebar }) => {
   return (
-    <header className="fixed w-full z-50 bg-indigo-500 shadow-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <NavLink to="/" className="flex-shrink-0 flex items-center">
-            <img className="h-10 w-auto" src={logo} alt="React Jobs" />
-            <span className="hidden md:block text-white text-2xl font-bold ml-2">
+    <header className="header">
+      <div className="header-container">
+        <div className="header-content">
+          <NavLink to="/" className="header-logo-container">
+            <img className="header-logo" src={logo} alt="React Jobs" />
+            <span className="header-logo-text">
               React Jobs
             </span>
           </NavLink>
           {isMobile && (
             <button
-              className="text-white hover:text-gray-300 focus:outline-none"
+              className="mobile-menu-button"
               onClick={toggleSidebar}
             >
-              <FaBars className="h-6 w-6" />
+              <FaBars className="mobile-menu-icon" />
             </button>
           )}
         </div>

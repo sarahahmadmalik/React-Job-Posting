@@ -50,32 +50,32 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="flex justify-center items-center min-h-screen p-6 bg-indigo-50">
-      <div className="max-w-md w-full bg-white p-8 shadow-xl rounded-xl">
+    <section className="contact-section">
+      <div className="contact-container">
         {!submitted && (
-          <h1 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+          <h1 className="contact-title">
             Contact Us
           </h1>
         )}
 
         {errorMessage && (
-          <div className="mb-4 text-red-500 text-center">
+          <div className="error-message">
             <p>{errorMessage}</p>
           </div>
         )}
 
         {successMessage && (
-          <div className="mb-4 text-green-500 text-center flex flex-col items-center justify-center space-y-2">
-            <FiCheckCircle className="text-3xl text-green-600" />
+          <div className="success-message">
+            <FiCheckCircle className="success-icon" />
             <p>{successMessage}</p>
           </div>
         )}
 
         {!submitted && !loading && (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-gray-600 font-medium">
-                Name <span className="text-red-500">*</span>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Name <span className="required-mark">*</span>
               </label>
               <input
                 type="text"
@@ -84,16 +84,13 @@ const ContactUs = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
+                className="form-input"
               />
             </div>
 
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-gray-600 font-medium"
-              >
-                Email <span className="text-red-500">*</span>
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email <span className="required-mark">*</span>
               </label>
               <input
                 type="email"
@@ -102,16 +99,13 @@ const ContactUs = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
+                className="form-input"
               />
             </div>
 
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-gray-600 font-medium"
-              >
-                Message <span className="text-red-500">*</span>
+            <div className="form-group">
+              <label htmlFor="message" className="form-label">
+                Message <span className="required-mark">*</span>
               </label>
               <textarea
                 id="message"
@@ -119,13 +113,13 @@ const ContactUs = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 ease-in-out"
+                className="form-textarea"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 bg-indigo-500 text-white font-medium rounded-md hover:bg-indigo-700 transition-all duration-300 ease-in-out"
+              className="submit-button"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>

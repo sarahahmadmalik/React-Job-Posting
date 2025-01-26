@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper-content {
+    display: flex;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+    min-height: 100vh;
+}
+
+@media (min-width: 700px) {
+    .wrapper-content {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.wrapper-main-content {
+    flex-grow: 1;
+    margin-left: 0;
+}
+
+@media  (min-width: 700px) and (max-width: 1024px) {
+    .wrapper-main-content {
+        margin-left: 80px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper-main-content {
+        margin-left: 250px;
+    }
+}

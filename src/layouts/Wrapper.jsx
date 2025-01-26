@@ -2,6 +2,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
+import './styles/Wrapper.css';
 
 const Wrapper = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,32 +11,31 @@ const Wrapper = ({ children }) => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Tablet and below
+      setIsMobile(window.innerWidth <= 700); 
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Set initial state
+    handleResize(); 
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen">
-        <Header isMobile={isMobile} toggleSidebar={toggleSidebar} />
-        <div className="flex mt-[4rem] mb-[10rem] md:my-[4rem] min-h-screen ">
-          <Sidebar
-            isMobile={isMobile}
-            isOpen={isOpen}
-            toggleSidebar={toggleSidebar}
-          />
-          <div className="flex-grow ">{children}</div>
-        </div>
-        <Footer />
+    <div className="wrapper">
+      <Header isMobile={isMobile} toggleSidebar={toggleSidebar} />
+      <div className="wrapper-content">
+        <Sidebar
+          isMobile={isMobile}
+          isOpen={isOpen}
+          toggleSidebar={toggleSidebar}
+        />
+        <div className="wrapper-main-content">{children}</div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 
